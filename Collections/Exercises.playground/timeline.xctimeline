@@ -2,5 +2,25 @@
 <Timeline
    version = "3.0">
    <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/colinliu/Repo/Swift-Programming-Syntax/Collections/Exercises.playground#CharacterRangeLen=20&amp;CharacterRangeLoc=2534&amp;EndingColumnNumber=0&amp;EndingLineNumber=59&amp;StartingColumnNumber=1&amp;StartingLineNumber=58&amp;Timestamp=611682177.2979389"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/colinliu/Repo/Swift-Programming-Syntax/Collections/Exercises.playground#CharacterRangeLen=20&amp;CharacterRangeLoc=2862&amp;EndingColumnNumber=0&amp;EndingLineNumber=66&amp;StartingColumnNumber=1&amp;StartingLineNumber=65&amp;Timestamp=611682177.298056"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/colinliu/Repo/Swift-Programming-Syntax/Collections/Exercises.playground#CharacterRangeLen=21&amp;CharacterRangeLoc=3178&amp;EndingColumnNumber=0&amp;EndingLineNumber=72&amp;StartingColumnNumber=0&amp;StartingLineNumber=71&amp;Timestamp=611682177.298142"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/colinliu/Repo/Swift-Programming-Syntax/Collections/Exercises.playground#CharacterRangeLen=50&amp;CharacterRangeLoc=3507&amp;EndingColumnNumber=0&amp;EndingLineNumber=76&amp;StartingColumnNumber=5&amp;StartingLineNumber=75&amp;Timestamp=611682177.298223"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
    </TimelineItems>
 </Timeline>
