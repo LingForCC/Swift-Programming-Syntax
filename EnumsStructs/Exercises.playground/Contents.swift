@@ -32,6 +32,11 @@ macchiato.steamedMilk
 //: __2a.__
 //: Write an enum to represent the five fingers on a human hand.
 //:
+enum fingers: Int {
+    case thumb=1
+    case indexFinger=2
+}
+
 //: __2b.__
 //: Associate an Int value with each finger.
 
@@ -112,6 +117,22 @@ macchiato.steamedMilk
 //: __4a.__
 //: Include 2 stored properties. Examples might include a string representing flavor, or an int representing minutesSinceRemovalFromOven.
 
+struct Cookie {
+    let flavor: String
+    let minutesSinceRemovalFromOven: Int
+    
+    init(flavor: String, minutesSinceRemovalFromOven: Int) {
+        self.flavor = flavor
+        self.minutesSinceRemovalFromOven = minutesSinceRemovalFromOven
+    }
+    
+    var delicious: Bool {
+        get {
+            return true
+        }
+    }
+}
+
 //:__4b.__
 //: Add a computed property, "delicious", a bool whose value depends upon the values of the stored properties.
 
@@ -120,6 +141,8 @@ macchiato.steamedMilk
 
 //: __4d.__
 //: Create an instance of your Cookie struct and call its method.
+
+var cookie = Cookie(flavor: "Test", minutesSinceRemovalFromOven: 5)
 
 //: __Problem 5__
 //:
