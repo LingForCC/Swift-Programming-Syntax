@@ -19,7 +19,8 @@ enum Level {
     case high
 }
 
-class Teenager {
+class Teenager: Babysitter {
+    
     var age: Int
     let responsible: Bool
     let patience: Level
@@ -29,6 +30,14 @@ class Teenager {
         self.responsible = responsible
         self.patience = patience
     }
+    
+    func playCandyland(_ numberOfTimes: Int) {
+        
+    }
+    
+    func read(_ book: String, firstLine: String, asleep: Bool) -> Bool {
+        return true
+    }
 }
 
 protocol Babysitter {
@@ -36,7 +45,8 @@ protocol Babysitter {
     func read(_ book: String, firstLine: String, asleep: Bool) -> Bool
 }
 
-
+let teenager = Teenager(age: 30, responsible: true, patience: .high)
+teenager.read("Test", firstLine: "Firstline", asleep: true)
 //: __Problem 2__
 //:
 //:Below find the class Animal along with the Adorable protocol.
@@ -59,7 +69,13 @@ protocol Adorable {
 
 var cuteMouse = UIImage(named: "mouseBall")
 
-class Animal { 
+class Animal: Adorable {
+    var size: Size = .small
+    var softFur: Bool {
+        get {
+            return true
+        }
+    }
     let species: String
     let numberOfLegs: Int
     
@@ -67,8 +83,19 @@ class Animal {
         self.species = species
         self.numberOfLegs = numberOfLegs
     }
+    
+    func frolick() {
+        
+    }
+    
+    func curlIntoSmallBall() {
+        
+    }
 }
-var pic = UIImage(named: "frolick.jpg")
+//var pic = UIImage(named: "frolick.jpg")
+
+let animal = Animal(species: "test", numberOfLegs: 4)
+let adorableInstance: Adorable = animal
 
 //: __Problem 3__
 //:
@@ -79,7 +106,7 @@ var pic = UIImage(named: "frolick.jpg")
 //:
 //: __3b.__ Edit the Friend class so that it adopts the Mover protocol.
 
-class Friend {
+class Friend: Mover {
     var reliability: Int
     var likesYou: Bool
     
@@ -111,6 +138,12 @@ class Friend {
     }
 }
 
+protocol Mover {
+    func goHiking() -> String
+    
+}
+
+let friend = Friend(reliability: 1, likesYou: true, willWorkForPizzaAndBeer: true)
 //: Problem 4
 //:
 //: Below you can see that the Squirrel class conforms to the Hoarder protocol.
