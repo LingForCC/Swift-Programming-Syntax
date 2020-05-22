@@ -13,15 +13,22 @@ struct Tail {
 class Animal {
     var species: String = ""
     let tail: Tail
+    
+    init(tail: Tail) {
+        self.tail = tail
+    }
 }
 //: __1b.__
 //: Instantiate and initialize a few different Animals.
-
+let tail_1 = Tail(lengthInCm: 10)
+let animal_1 = Animal(tail: tail_1)
+animal_1.species = "1"
 //: __Problem 2__
 //:
 //: Below are the beginnings of the Peach class.
 class Peach {
     let variety: String
+    static let varieties = ["type 1", "type 2", "type 3"]
     
     // Softness is rated on a scale from 1 to 5, with 5 being the softest
     var softness: Int
@@ -30,7 +37,23 @@ class Peach {
         self.variety = variety
         self.softness = softness
     }
+    
+    func ripen() -> String {
+        if self.softness < 5 {
+            self.softness += 1
+        }
+        
+        if self.softness == 5 {
+            return "ripe"
+        } else {
+            return "not ripe"
+        }
+    }
 }
+
+let peach = Peach(variety: Peach.varieties[0], softness: 1)
+peach.ripen()
+peach.ripen()
 //: __2a.__
 //: Add a type property to the Peach class called "varieties". It should hold an array of different types of peaches.
 //:
@@ -44,11 +67,17 @@ class Peach {
 //:
 //: __3a.__
 //:Add the computed property, "cuddlability", to the class, FluffyDog. Cuddlability should be computed based on the values of the stored properties, fluffiness and droolFactor.
-var theFluffiestDog = UIImage(named:"fluffyDog")!
+//var theFluffiestDog = UIImage(named:"fluffyDog")!
 class FluffyDog {
     let name: String
     let fluffiness: Int
     let droolFactor: Int
+    
+    var cuddlability: Int {
+        get {
+            return fluffiness * droolFactor
+        }
+    }
     
     init(name: String, fluffiness: Int, droolFactor: Int) {
         self.name = name
@@ -62,7 +91,9 @@ class FluffyDog {
 }
 //: __3b.__
 //: Instantiate and initialize an instance of the class, FluffyDog. Use it to call the method, chase().
-
+let fluffyDog = FluffyDog(name: "dog", fluffiness: 5, droolFactor: 4)
+fluffyDog.cuddlability
+fluffyDog.chase("dog")
 //: __Problem 4__
 //:
 //: __4a.__
@@ -83,10 +114,26 @@ class ChattyDog {
         self.breed = breed
         self.size = size
     }
+    
+    func bark() -> String {
+        var result = "";
+        switch size {
+        case Size.small:
+            result = "loud"
+        case Size.medium:
+            result = "louder"
+        case Size.large:
+            result = "loudest"
+        }
+        return result
+    }
+    
 }
 //: __4b.__
 //: Create an instance of ChattyDog and use it to call the method, bark().
-
+let dog = ChattyDog(name: "dog", breed: "breed", size: Size.medium)
+dog.bark()
+dog.name
 //: __4c.__
 //: Rewrite the method, bark(), as a type method and rename it speak(). Call your type method to test it out.
 
@@ -107,6 +154,20 @@ enum NaturalDisaster {
 class House {
     var numberOfBedrooms: Int = 0
     let location: Quality
+    
+    var worthyOfAnOffer: Bool {
+        get {
+            if location == .excellent && numberOfBedrooms > 3 {
+                return true
+            } else {
+                return false
+            }
+        }
+    }
+    
+    init(location: Quality) {
+        self.location = location
+    }
  
     func willStayStanding(_ naturalDisaster:NaturalDisaster)-> Bool {
         switch naturalDisaster {
@@ -122,10 +183,12 @@ class House {
 
 //: __5b.__
 //: Create an instance of the House class and use it to call the method, willStayStanding().  This method takes in a parameter of type NaturalDisaster and return a Bool indicating whether the house will stay standing in a given natural disaster.
-
+let house = House(location: .fair)
+house.willStayStanding(.hurricane)
 //: __5c.__
 //: Add a computed property called, "worthyOfAnOffer". This property should be a Bool, whose return value is dependent upon some combination of the stored properties, numberOfBedrooms and location.
-
+house.numberOfBedrooms = 4
+house.worthyOfAnOffer
 
 
 
